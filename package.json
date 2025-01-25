@@ -1,0 +1,12 @@
+{
+  "name": "syngenta",
+  "version": "1.0.0",
+  "description": "Syngenta exam",
+  "main": "syngentaExam.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jose Antonio Alvarez Soto",
+  "license": "ISC"
+}
