@@ -6,6 +6,9 @@ import { createInterface } from 'readline';
 * this increase performance and reduce memory usage in case of a big file
 */
 export async function textWordsAnalisys(path: string): Promise<[string, number][]> {
+  if (path === null || path === undefined) {
+    throw new Error('Error processing the file: Path must be a string');
+   }
   return new Promise((resolve, reject) => {
     const wordsCount = new Map(); 
 
