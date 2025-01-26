@@ -6,6 +6,7 @@
   "type": "commonjs",
   "scripts": {
     "start": "npx ts-node ./src/server.ts",
+    "quest3": "npx tsc && node ./dist/syngentaExamQuestion3.js",
     "quest2": "npx tsc && node ./dist/syngentaExamQuestion2.js",
     "quest1": "npx tsc && node ./dist/syngentaExamQuestion1.js",
     "test": "echo \"Error: no test specified\" && exit 1"
