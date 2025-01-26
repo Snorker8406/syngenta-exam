@@ -28,10 +28,10 @@ export async function testWordsAnalisys(textFilePath: string) {
   }
 }
 
-// Ejecución principal para probar la función
+// test the function
 (async () => {
   try {
-    const result = await testWordsAnalisys('syngenta-exam/sampleText.txt');
+    const result = await testWordsAnalisys('sampleText.txt');
     console.log("word's list: ");
     console.log(result);
   } catch (error) {
