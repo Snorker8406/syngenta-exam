@@ -2,7 +2,7 @@ import express, { Request, Response, NextFunction } from "express";
 import multer, { MulterError } from "multer";
 import path from "path";
 import fs from "fs";
-import { testWordsAnalisys } from "./syngentaExamQuestion2";
+import { textWordsAnalisys } from "./syngentaExamQuestion2";
 
 const app = express();
 const PORT = 3000;
@@ -60,7 +60,7 @@ app.post("/upload", upload.single("file"), async (req: Request, res: Response): 
   res.status(200).send({
     message: "File uploaded successfully.",
     file: req.file.originalname, // Return the original file name
-    words: Object.fromEntries(await testWordsAnalisys(uploadedFilePath)), //PROCESSING THE FILE
+    words: Object.fromEntries(await textWordsAnalisys(uploadedFilePath)), //PROCESSING THE FILE
   });
 });
 

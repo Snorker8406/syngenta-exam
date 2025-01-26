@@ -5,7 +5,7 @@ import { createInterface } from 'readline';
 * with this function we can count the words in a file using streams
 * this increase performance and reduce memory usage in case of a big file
 */
-export async function testWordsAnalisys(path: string): Promise<[string, number][]> {
+export async function textWordsAnalisys(path: string): Promise<[string, number][]> {
   return new Promise((resolve, reject) => {
     const wordsCount = new Map(); 
 
@@ -39,7 +39,7 @@ export async function testWordsAnalisys(path: string): Promise<[string, number][
 
 (async () => {
   try {
-    const result = await testWordsAnalisys('sampleText.txt');
+    const result = await textWordsAnalisys('sampleText.txt');
     console.log("word's list: ");
     console.log(result);
   } catch (error) {

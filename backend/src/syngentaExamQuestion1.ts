@@ -2,7 +2,7 @@ import { PathLike } from 'fs';
 import { FileHandle, readFile } from 'fs/promises';
 
 
-export async function testWordsAnalisys(textFilePath: string) {
+export async function textWordsAnalisys(textFilePath: string) {
   try {
     const contentText = await readFile(textFilePath, 'utf-8');
 
@@ -31,7 +31,7 @@ export async function testWordsAnalisys(textFilePath: string) {
 // test the function
 (async () => {
   try {
-    const result = await testWordsAnalisys('sampleText.txt');
+    const result = await textWordsAnalisys('sampleText.txt');
     console.log("word's list: ");
     console.log(result);
   } catch (error) {
