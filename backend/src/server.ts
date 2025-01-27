@@ -1,11 +1,10 @@
 import express, { Request, Response, NextFunction } from "express";
 import multer, { MulterError } from "multer";
 import path from "path";
-import fs from "fs";
 import { textWordsAnalisys } from "./syngentaExamQuestion2";
 
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -47,7 +46,7 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 // Route to handle file upload
-app.post("/upload", upload.single("file"), async (req: Request, res: Response): Promise<void> => {
+app.post("/api/upload", upload.single("file"), async (req: Request, res: Response): Promise<void> => {
   if (!req.file) {
     res.status(400).send({
       message: "No file uploaded.",
@@ -58,9 +57,9 @@ app.post("/upload", upload.single("file"), async (req: Request, res: Response): 
   const uploadedFilePath = path.join(__dirname, "..", "uploads", req.file.filename);
 
   res.status(200).send({
-    message: "File uploaded successfully.",
+    message: "Text file recibed and ready to be analized.",
     file: req.file.originalname, // Return the original file name
-    words: Object.fromEntries(await textWordsAnalisys(uploadedFilePath)), //PROCESSING THE FILE
+    words: await textWordsAnalisys(uploadedFilePath), //PROCESSING THE FILE
   });
 });
 

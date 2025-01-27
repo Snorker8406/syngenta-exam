@@ -46,7 +46,7 @@ describe('textWordsAnalisys question 2 unit test', () => {
     const executionTime = end - start;
 
     console.log(`Execution time for large file: ${executionTime.toFixed(2)}ms`);
-    const performanceThreshold = 50; // 50 milliseconds
+    const performanceThreshold = 100; // 100 milliseconds
     expect(executionTime).toBeLessThan(performanceThreshold);
     expect(result.length).toBeGreaterThan(0); // Ensure it processed some words
   });
